@@ -73,6 +73,7 @@ def maximo(nums):
 ### O(n log n) – tempo quase-linear
 - **Ideia**: divide e conquista com trabalho linear por nível; típico de ordenações eficientes (merge sort, heap sort) e certas estruturas.
 - **Como identificar**: divide em subproblemas (geralmente em 2), resolve recursivamente e combina em O(n).
+ - **Diferença para O(log n)**: em O(log n) você reduz por fator sem varrer toda a entrada; em O(n log n) existem ~log n níveis e em cada nível processa-se O(n) elementos (ex.: ordenar toda a lista a cada nível de divisão).
 
 ```python
 # Exemplo: merge sort (ordenação estável O(n log n))
@@ -130,6 +131,7 @@ def subconjuntos(nums):
 ### O(n!) – tempo fatorial (muito custoso)
 - **Ideia**: explora todas as permutações possíveis dos n elementos.
 - **Como identificar**: backtracking que fixa posições e permuta o restante; número de estados cresce como n!.
+ - **Backtracking na prática**: modela-se o problema como uma árvore de decisões em que cada nível fixa uma escolha (ex.: qual elemento vai na próxima posição). Sem podas, todas as permutações são geradas, resultando em n! estados. Podas (restrições/heurísticas) podem reduzir casos, mas o pior caso permanece fatorial.
 
 ```python
 # Exemplo: gerar todas as permutações
